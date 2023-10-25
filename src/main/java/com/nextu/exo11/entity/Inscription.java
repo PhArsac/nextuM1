@@ -76,4 +76,12 @@ public class Inscription {
     public void setActivites(Set<Activite> activites) {
         this.activites = activites;
     }
+
+    public Set<ModePaiement> getModePaiements() {
+        return modePaiements;
+    }
+
+    public void setModePaiements(Set<ModePaiement> modePaiements) {
+        this.modePaiements = modePaiements;
+    }
 }

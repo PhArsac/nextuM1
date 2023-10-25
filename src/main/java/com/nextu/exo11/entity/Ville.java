@@ -16,15 +16,19 @@ public class Ville {
     @Column(nullable = true)
     private String code;
 
+    @Column(nullable = false)
+    private boolean estATarifReduit;
+
     @OneToMany(targetEntity = Membre.class, mappedBy = "ville")
     private Set<Membre> membres;
 
     public Ville() {
     }
 
-    public Ville(String libelle, String code) {
+    public Ville(String code, String libelle, boolean estATarifReduit) {
         this.libelle = libelle;
         this.code = code;
+        this.estATarifReduit = estATarifReduit;
     }
 
     public long getIdVille() {
@@ -57,5 +61,13 @@ public class Ville {
 
     public void setMembres(Set<Membre> membres) {
         this.membres = membres;
+    }
+
+    public boolean isEstATarifReduit() {
+        return estATarifReduit;
+    }
+
+    public void setEstATarifReduit(boolean estATarifReduit) {
+        this.estATarifReduit = estATarifReduit;
     }
 }
